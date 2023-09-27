@@ -1,6 +1,5 @@
-import dotenv, { config } from "dotenv";
+import dotenv from "dotenv";
 dotenv.config();
-config();
 
 export async function getCVInfo() {
   try {
