@@ -45,8 +45,9 @@ function sendEmail(email, subject, message) {
   });
 }
 
-app.get('/send_email', (req, res) => {
-  const { email, subject, message } = req.query;
+app.post('/send_email', (req, res) => {
+  console.log(req.body);
+  const { email, subject, message } = req.body;
   const subjectWithEmail = `Email: ${email} - Subject: ${subject}`;
   sendEmail(email, subjectWithEmail, message)
     .then((response) => res.send(response.message))
