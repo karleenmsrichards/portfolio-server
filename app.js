@@ -46,7 +46,6 @@ function sendEmail(email, subject, message) {
 }
 
 app.post('/send_email', (req, res) => {
-  console.log(req.body);
   const { email, subject, message } = req.body;
   const subjectWithEmail = `Email: ${email} - Subject: ${subject}`;
   sendEmail(email, subjectWithEmail, message)
